@@ -20,6 +20,7 @@ public class MainActivity {
     }*/
 
     public MainActivity(){
+        //current updates
         message = "here";
 
         boolean isWrongMessage = false;

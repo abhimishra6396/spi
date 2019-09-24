@@ -20,7 +20,7 @@ public class MainActivity {
     }*/
 
     public MainActivity(){
-        message = "Fuck";
+        message = "here";
 
         boolean isWrongMessage = false;
 
@@ -30,7 +30,7 @@ public class MainActivity {
         actualGsk = gsks[0];
 
         sign = sign(message, gpk, gsks[2]);
-        message = "Fuck";
+        message = "here";
     }
 
     public SdhSignature getSign() {

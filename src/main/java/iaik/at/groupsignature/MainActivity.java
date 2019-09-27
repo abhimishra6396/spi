@@ -8,6 +8,7 @@ public class MainActivity {
     private GroupSecretKey[] gsks;
     private GroupSecretKey actualGsk;
     private SdhSignature sign;
+    UserReply userreply;
 
     static {
         System.loadLibrary("gss");
@@ -19,8 +20,12 @@ public class MainActivity {
         return name;
     }*/
 
-    public MainActivity(){
+    public MainActivity(UserMessage msg){
         //current updates
+        UserMessage usrm = new UserMessage();
+        usrm = msg;
+        UserRegistration usr_reg = new UserRegistration();
+
         message = "here";
 
         boolean isWrongMessage = false;
@@ -32,9 +37,29 @@ public class MainActivity {
 
         sign = sign(message, gpk, gsks[2]);
         message = "here";
+
+        System.out.println("In registeruser");
+        userreply = new UserReply();
+        UserRegistration.getInstance().add(msg);
+
+        userreply.setUser_id(msg.getUser_id());
+        userreply.setNonce(msg.getNonce()+1);
+        userreply.setUser_x509(msg.getUser_x509());
+        userreply.setTimestamp(msg.getTimestamp());
+        userreply.setActualGsk(actualGsk);
+        userreply.setGpk(gpk);
+        userreply.setMessage(message);
     }
 
-    public SdhSignature getSign() {
+    public UserReply getUserreply() {
+        return userreply;
+    }
+
+    public void setUserreply(UserReply userreply) {
+        this.userreply = userreply;
+    }
+
+    /*public SdhSignature getSign() {
         System.out.println("Verification Result: "+verify(message, gpk, sign));
         //System.out.println("Sign: "+sign);
         return sign;
@@ -57,7 +82,7 @@ public class MainActivity {
     public GroupSecretKey getActualGsk() {
         //System.out.println("GSK: "+ actualGsk);
         return actualGsk;
-    }
+    }*/
 
     /**
      * Generates an array of random Integers

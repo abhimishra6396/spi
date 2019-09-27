@@ -1,10 +1,13 @@
-iaik/at/groupsignature/libload.class
+iaik/at/groupsignature/UserMessage.class
+iaik/at/groupsignature/UserRegistration.class
+iaik/at/groupsignature/RegisterUser.class
+iaik/at/groupsignature/UserReply.class
+iaik/at/groupsignature/MainActivity.class
 iaik/at/groupsignature/GroupPublicKey.class
 iaik/at/groupsignature/SdhSignature.class
-iaik/at/groupsignature/SignMessageController.class
+iaik/at/groupsignature/PublicKeyGM.class
 iaik/at/groupsignature/ClientApp.class
 iaik/at/groupsignature/EcPoint_Fp2.class
 iaik/at/groupsignature/GroupSecretKey.class
 iaik/at/groupsignature/GroupMasterSecretKey.class
-iaik/at/groupsignature/MainActivity.class
 iaik/at/groupsignature/EcPoint_Fp.class
